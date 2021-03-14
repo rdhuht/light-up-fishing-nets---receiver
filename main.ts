@@ -1,5 +1,3 @@
-let light2 = 0
-let volume = 0
 // 接收端
 function 闪烁 () {
     led.setBrightness(light2)
@@ -49,6 +47,9 @@ radio.onReceivedValue(function (name, value) {
         volume = value
     }
 })
+let volume = 0
+let light2 = 0
+radio.setGroup(111)
 // 接收端
 basic.forever(function () {
     if (input.lightLevel() < 50) {
